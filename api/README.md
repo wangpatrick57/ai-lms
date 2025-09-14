@@ -13,9 +13,18 @@ pants generate-lockfiles
 ```
 
 ## Running
-This runs the API server. Generate the lockfile, then do:
+### Local
+Generate the lockfile, then do:
 ```
 pants run src/main.py
+```
+
+### Deployment
+The API is deployed as a private service on Render. It will use the lockfile that is
+committed to the repo. If you want to simulate what happens in Render, do:
+```
+pants package src:binary
+./dist/src/binary.pex
 ```
 
 ## Local environment
@@ -26,5 +35,9 @@ Generate the lockfile, then do:
 pants export --py-resolve-format=symlinked_immutable_virtualenv --resolve=default
 ```
 
-Activate with `source dist/export/python/virtualenvs/default/3.13.7/bin/activate`.
+To activate, do:
+```
+source dist/export/python/virtualenvs/default/3.13.7/bin/activate
+```
+
 Then, do `which python` to see the executable path. Point your IDE to that.
