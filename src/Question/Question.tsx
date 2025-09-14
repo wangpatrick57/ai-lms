@@ -1,7 +1,7 @@
-import "./Question.module.css";
+import styles from "./Question.module.css";
 
 function Question() {
-  return <div>hi</div>;
+  return <div className={styles.question}>hi</div>;
 }
 
 export default Question;

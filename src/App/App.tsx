@@ -1,9 +1,9 @@
 import Question from "../Question/Question.tsx";
-import "./App.module.css";
+import styles from "./App.module.css";
 
 function App() {
   return (
-    <div>
+    <div className={styles.app}>
       <Question />
     </div>
   );
