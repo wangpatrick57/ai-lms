@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 import uvicorn
+import os
 
 app = FastAPI()
 
@@ -7,5 +8,7 @@ app = FastAPI()
 def hello_world():
     return {"message": "Hello, world!"}
 
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+def main():
+    # Render injects the PORT envvar.
+    port = int(os.environ.get("PORT", "8000"))
+    uvicorn.run(app, host="0.0.0.0", port=port)
