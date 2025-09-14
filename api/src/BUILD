@@ -1,6 +1,6 @@
 python_sources()
 
 pex_binary(
-    name="pex",
+    name="binary",
     entry_point="main:main",
 )
