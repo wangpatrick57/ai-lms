@@ -1,0 +1,13 @@
+[GLOBAL]
+pants_version = "2.28.0"
+backend_packages = [
+    "pants.backend.python"
+]
+
+[python]
+interpreter_constraints = ["CPython>=3.13"]
+enable_resolves = true
+default_resolve = "default"
+
+[python.resolves]
+default = "dep/default.lock"
